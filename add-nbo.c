@@ -6,7 +6,7 @@ uint32_t fton(char *file)
 {
 	FILE *fp = fopen(file, "rb");
 	if (fp == NULL) {
-		printf("Can't open file: %s\n", file);
+		printf("Can't open %s\n", file);
 		return 0;
 	}
 	
@@ -33,6 +33,10 @@ uint32_t fton(char *file)
 }
 
 int main(int argc, char *argv[]){
+	if (argc != 3) {
+		printf("Input file must be two\n");
+		return 1;
+        }
 	char *f1 = argv[1];
 	char *f2 = argv[2];
 	
